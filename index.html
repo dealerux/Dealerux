@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO & GEO METADATOS -->
+    <title>DEALERUX | Growth Partner, IA para Negocios y E-commerce en Ecuador</title>
+    <meta name="description" content="DEALERUX impulsa negocios físicos y digitales mediante Inteligencia Artificial y softwares exclusivos como GENIUX y SELLERCHAT. Tu aliado estratégico Growth Partner para dominar el comercio electrónico y escalar ventas con tecnología de vanguardia.">
+    <meta name="keywords" content="DEALERUX, GENIUX, SELLERCHAT, Growth Partner, Inteligencia Artificial para negocios, E-commerce, Comercio Electrónico, Servicios Tecnológicos, Softwares para negocios, Automatización de ventas, Carlos de la Cruz">
+    <meta name="author" content="Carlos de la Cruz - DEALERUX">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Para redes sociales e IAs) -->
+    <meta property="og:title" content="DEALERUX | No compitas, evoluciona.">
+    <meta property="og:description" content="Implementación de sistemas estratégicos con IA para escalar ventas en negocios físicos y E-commerce.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/dealerux/Dealerux/main/LOGO.png">
+    <meta property="og:type" content="website">
+
+    <!-- GEO / Datos Estructurados JSON-LD (Para Google Search & AI Engines) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "DEALERUX",
+      "image": "https://raw.githubusercontent.com/dealerux/Dealerux/main/LOGO.png",
+      "description": "Growth Partner especializado en Inteligencia Artificial aplicada a Negocios Físicos y E-commerce. Desarrolladores de GENIUX y SELLERCHAT.",
+      "url": "https://dealerux.com",
+      "telephone": "+593996337830",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "EC"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Carlos de la Cruz"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios DEALERUX",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "GENIUX - Logística e IA para RIMPE"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SELLERCHAT - Agente de Ventas IA 24/7"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Growth Partner - Escalamiento Agresivo"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/dealerux/Dealerux/main/FAVICON.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- ESTILOS INTRO EVOLUCIÓN --- */
+        #intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.8s ease, visibility 0.8s;
+        }
+
+        .intro-logo {
+            height: 80px;
+            margin-bottom: 2.5rem;
+            animation: intro-pulse 2s infinite ease-in-out;
+        }
+
+        .intro-loader-container {
+            width: 200px;
+            height: 3px;
+            background: #EEEEEE;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-loader-bar {
+            width: 0%;
+            height: 100%;
+            background: #FF0000;
+            transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .intro-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #000000;
+            font-weight: 700;
+        }
+
+        @keyframes intro-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        /* Control de visibilidad post-intro */
+        .horizontal-viewport {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease;
+        }
+
+        .horizontal-viewport.show-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* --- ESTILOS ORIGINALES PÁGINA (SIN ALTERACIONES) --- */
+        :root {
+            --red: #FF0000;
+            --black: #000000;
+            --white: #F5F5F5;
+            --bg-mesh: radial-gradient(at 0% 0%, rgba(255, 0, 0, 0.1) 0px, transparent 50%),
+                       radial-gradient(at 100% 100%, rgba(255, 0, 0, 0.12) 0px, transparent 50%);
+            --glass: rgba(255, 255, 255, 0.92);
+            --text-main: #000000;
+            --text-secondary: #222222;
+            --border-glass: rgba(0, 0, 0, 0.15);
+            --card-bg: #FFFFFF;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Syne', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --logo-filter: none;
+            --btn-glow: rgba(255, 0, 0, 0.4);
+            --whatsapp-green: #25d366;
+        }
+
+        [data-theme="dark"] {
+            --white: #080808;
+            --black: #ffffff;
+            --bg-mesh: radial-gradient(at 0% 0%, rgba(255, 0, 0, 0.18) 0px, transparent 50%),
+                       radial-gradient(at 100% 100%, rgba(255, 0, 0, 0.25) 0px, transparent 50%);
+            --glass: rgba(18, 18, 18, 0.94);
+            --text-main: #ffffff;
+            --text-secondary: #cccccc;
+            --border-glass: rgba(255, 255, 255, 0.25);
+            --card-bg: #151515;
+            --logo-filter: invert(1) brightness(2);
+            --btn-glow: rgba(255, 0, 0, 0.6);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body, html {
+            background: var(--white);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            transition: background 0.5s ease;
+        }
+
+        .bg-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: var(--bg-mesh);
+        }
+
+        .horizontal-viewport {
+            display: flex;
+            width: 600vw;
+            height: 100vh;
+            will-change: transform;
+            transition: transform 1.2s cubic-bezier(0.2, 1, 0.2, 1);
+        }
+
+        section {
+            width: 100vw;
+            height: 100vh;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-container {
+            width: 94%;
+            max-width: 1200px;
+            height: 92vh;
+            background: var(--glass);
+            backdrop-filter: blur(35px);
+            -webkit-backdrop-filter: blur(35px);
+            border: 1px solid var(--border-glass);
+            border-radius: 28px;
+            padding: 4vh 5vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.18);
+            overflow-y: auto;
+            scrollbar-width: none;
+            transition: background 0.5s ease, border 0.5s ease, color 0.5s ease;
+        }
+
+        .glass-container::-webkit-scrollbar { display: none; }
+
+        .header-logo {
+            height: 45px;
+            margin-bottom: 1.5rem;
+            filter: var(--logo-filter);
+            transition: filter 0.5s ease;
+        }
+
+        .hero-photo {
+            width: 240px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 40px;
+            border: 5px solid var(--red);
+            margin: 1.5rem auto;
+            display: block;
+            animation: photo-glow 4s infinite ease-in-out;
+        }
+
+        .section-glow {
+            animation: container-glow 4s infinite ease-in-out;
+        }
+
+        @keyframes photo-glow {
+            0%, 100% { transform: scale(1); box-shadow: 0 15px 45px rgba(255, 0, 0, 0.2); }
+            50% { transform: scale(1.03); box-shadow: 0 20px 60px rgba(255, 0, 0, 0.4); border-color: #FF3333; }
+        }
+
+        @keyframes container-glow {
+            0%, 100% { box-shadow: 0 40px 100px rgba(0,0,0,0.18); border-color: var(--border-glass); }
+            50% { box-shadow: 0 40px 110px rgba(255, 0, 0, 0.15); border-color: rgba(255, 0, 0, 0.3); }
+        }
+
+        .label-auth {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            color: var(--red);
+            font-weight: 700;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        h1, h2, .footer-h1 {
+            font-family: var(--font-sans);
+            font-size: clamp(2.4rem, 8vw, 5.5rem);
+            line-height: 0.9;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .no-compitas { color: var(--text-main); transition: color 0.5s ease; }
+
+        .serif-italic {
+            font-family: var(--font-serif);
+            font-style: italic;
+            text-transform: none;
+            letter-spacing: -1px;
+            color: var(--text-main);
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(120deg, var(--text-main) 40%, #FF0000 50%, var(--text-main) 60%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text-shine 5s linear infinite;
+        }
+
+        @keyframes text-shine { to { background-position: 200% center; } }
+
+        .attention-text {
+            font-weight: 800;
+            color: var(--red);
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            display: inline-block;
+            background: linear-gradient(90deg, var(--red) 0%, #FFFFFF 50%, var(--red) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: attention-shine 6s linear infinite;
+        }
+
+        @keyframes attention-shine {
+            0% { background-position: -150% center; }
+            100% { background-position: 150% center; }
+        }
+
+        .btn-pill {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+            color: #FFFFFF !important;
+            padding: 1.2rem 2.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.35);
+            transition: 0.4s ease;
+        }
+
+        .btn-pulse { animation: pulse-btn 2s infinite; }
+
+        @keyframes pulse-btn {
+            0% { box-shadow: 0 0 0 0 var(--btn-glow); transform: scale(1); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); transform: scale(1.02); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); transform: scale(1); }
+        }
+
+        .pillar-card {
+            background: rgba(0,0,0,0.03);
+            border-left: 3px solid var(--red);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 15px 15px 0;
+            transition: transform 0.3s ease, background 0.5s ease;
+        }
+
+        [data-theme="dark"] .pillar-card { background: rgba(255,255,255,0.03); }
+
+        .pillar-title {
+            font-family: var(--font-sans);
+            font-size: 1.2rem;
+            color: var(--text-main);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .pillar-item { margin-bottom: 1rem; }
+        .item-label {
+            font-family: var(--font-mono);
+            font-weight: 800;
+            font-size: 11px;
+            color: var(--red);
+            display: block;
+            margin-bottom: 2px;
+        }
+        .item-desc { font-size: 13px; line-height: 1.4; color: var(--text-secondary); }
+        .highlight-serif { font-family: var(--font-serif); font-style: italic; color: var(--text-main); font-weight: 700; transition: color 0.5s ease; }
+
+        .price-tabs {
+            display: flex;
+            background: rgba(0,0,0,0.05);
+            border-radius: 14px;
+            padding: 4px;
+            margin: 1rem 0;
+            border: 1px solid var(--border-glass);
+            transition: background 0.5s ease;
+        }
+        [data-theme="dark"] .price-tabs { background: rgba(255,255,255,0.05); }
+
+        .price-tab {
+            flex: 1;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 800;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-tab.active.metal-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: metal-sweep 3s infinite linear;
+        }
+
+        @keyframes metal-sweep { 0% { left: -150%; } 50% { left: 150%; } 100% { left: 150%; } }
+        .price-tab.active { background: var(--text-main); color: var(--white); }
+
+        .plan-display { display: none; flex-direction: column; gap: 1rem; }
+        .plan-display.active { display: flex; animation: fadeIn 0.4s ease; }
+
+        .price-feature-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            font-size: 11px;
+            font-family: var(--font-mono);
+        }
+        
+        .price-feature-item span:first-child { color: var(--text-secondary); }
+        .price-feature-item span:last-child { font-weight: 700; color: var(--text-main); }
+
+        .price-hero-box {
+            background: var(--card-bg);
+            border: 2px solid var(--text-main);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.5s ease, border-color 0.5s ease;
+        }
+
+        .elite-box { 
+            border-color: var(--red); 
+            box-shadow: 0 15px 35px rgba(255,0,0,0.15); 
+            background: linear-gradient(to bottom, var(--card-bg), rgba(255,0,0,0.02));
+        }
+
+        .price-val { 
+            font-family: var(--font-sans); 
+            font-size: 2.8rem; 
+            display: block; 
+            color: var(--text-main); 
+            margin: 0.2rem 0; 
+            letter-spacing: -2px;
+            transition: color 0.5s ease; 
+        }
+
+        .animated-price {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--red) 0%, #FF6666 50%, var(--red) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: price-pulse 2.5s infinite ease-in-out, text-shine 3s linear infinite;
+        }
+
+        @keyframes price-pulse {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.05); filter: brightness(1.3); }
+        }
+
+        .elite-val { color: var(--red); text-shadow: 0 0 15px rgba(255,0,0,0.2); }
+        .price-sub { font-family: var(--font-mono); font-size: 12px; opacity: 0.7; text-transform: uppercase; }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: auto;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .software-box {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 2px solid var(--text-main);
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            transition: all 0.4s ease;
+            text-align: left;
+        }
+
+        .software-img-container {
+            width: 100%;
+            height: 140px;
+            background: rgba(128,128,128,0.05);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid var(--border-glass);
+        }
+
+        .software-img-container img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
+
+        .software-title { font-family: var(--font-sans); font-size: 1.8rem; color: var(--red); text-transform: uppercase; }
+        .software-desc { font-size: 13px; line-height: 1.6; color: var(--text-secondary); }
+        .software-desc b { color: var(--text-main); font-weight: 700; }
+
+        .btn-software {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            font-family: var(--font-mono);
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.3s ease;
+            border: 1px solid var(--text-main);
+            background: var(--text-main);
+            color: var(--white);
+        }
+
+        .btn-software:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 5000;
+            background: var(--black);
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            cursor: pointer;
+            border: 1px solid var(--border-glass);
+        }
+
+        .nav-progress {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 4px;
+            background: rgba(0,0,0,0.05);
+            border-radius: 100px;
+            z-index: 5000;
+            border: 1px solid var(--border-glass);
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 16.6%;
+            background: var(--red);
+            transition: 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+            position: relative;
+            box-shadow: 0 0 15px var(--red);
+        }
+
+        .whatsapp-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-float {
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            position: relative;
+            overflow: hidden;
+            animation: wa-float 3s ease-in-out infinite;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .whatsapp-float:hover { transform: scale(1.15) rotate(5deg); }
+        .whatsapp-float::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -150%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: rotate(45deg);
+            animation: wa-shine 3s infinite linear;
+        }
+
+        @keyframes wa-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        @keyframes wa-shine { 0% { left: -150%; } 40%, 100% { left: 150%; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .glass-container { height: 94vh; padding: 25px 18px; }
+            .hero-photo { width: 200px; height: 200px; margin: 0.5rem auto 1rem; }
+            h1, h2, .footer-h1 { font-size: 2.1rem; }
+            .software-box { padding: 1.5rem; }
+            .software-grid { max-width: 100%; }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <!-- 1. CAPA DE INTRO (EVOLUCIÓN) -->
+    <div id="intro-overlay">
+        <img src="https://raw.githubusercontent.com/dealerux/Dealerux/main/LOGO.png" alt="Dealerux Logo" class="intro-logo">
+        <div class="intro-loader-container">
+            <div id="intro-progress" class="intro-loader-bar"></div>
+        </div>
+        <div class="intro-text">Iniciando evolución</div>
+    </div>
+
+    <!-- CONTENIDO ORIGINAL -->
+    <div class="bg-layer"></div>
+    
+    <div class="theme-switch" onclick="toggleTheme()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <span style="font-family: var(--font-mono); font-size: 10px; font-weight: 800;">VISIÓN</span>
+    </div>
+
+    <!-- CTA 1: BOTÓN FLOTANTE GLOBAL -->
+    <div class="whatsapp-container">
+        <a href="https://wa.me/593996337830?text=Hola%20DEALERUX!%20Vi%20tu%20sitio%20web%20y%20deseo%20informaci%C3%B3n%20general%20sobre%20c%C3%B3mo%20pueden%20ayudar%20a%20mi%20negocio." class="whatsapp-float" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="nav-progress"><div class="progress-bar" id="pBar"></div></div>
+
+    <div class="horizontal-viewport" id="viewport">
+        <!-- SECCIÓN 1: HERO -->
+        <section class="active">
+            <div class="glass-container">
+                <div>
+                    <div style="display: flex; justify-content: center; width: 100%;">
+                        <img src="https://raw.githubusercontent.com/dealerux/Dealerux/main/LOGO.png" alt="Dealerux Logo" class="header-logo">
+                    </div>
+                    <div style="margin-top: 1vh; display: flex; flex-direction: column; align-items: center;">
+                        <span class="label-auth">OFFICIAL GROWTH PARTNER</span>
+                        <img src="https://raw.githubusercontent.com/dealerux/Dealerux/main/FOTO.png" alt="Dealerux Brand" class="hero-photo">
+                        <h1>
+                            <span class="no-compitas">NO COMPITAS,</span>
+                            <span class="serif-italic">evoluciona.</span>
+                        </h1>
+                    </div>
+                    <div style="margin-top: 2vh; text-align: center;">
+                        <p class="attention-text">Domina la Nueva Era del E-commerce.</p>
+                    </div>
+                    <div style="margin-top: 2vh; text-align: center;">
+                        <p style="font-weight: 400; opacity: 0.9; line-height: 1.6;">
+                            ¡Sin agencias! ¡Sin humo! <br>
+                            <span style="font-size: 1.1rem; display: block; margin-top: 15px;">
+                                <b style="text-transform: uppercase; font-size: 1.4rem;">CARLOS DE LA CRUZ</b> <br>
+                                <span style="font-size: 1rem; opacity: 0.8; font-weight: 600;">CEO DE DEALERUX</span>
+                            </span>
+                            <div style="margin-top: 35px;"></div>
+                            Implemento sistemas estratégicos con Inteligencia Artificial para escalar las ventas de tu negocio.
+                        </p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 3vh; padding-bottom: 24vh;">
+                    <button class="btn-pill" onclick="scrollToSection(1)">Ingeniería Dealerux</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: PILARES -->
+        <section>
+            <div class="glass-container section-glow">
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <span class="label-auth">Metodología Dealerux</span>
+                    <h2 style="margin-top: 0.5rem; font-family: var(--font-sans); text-transform: uppercase; line-height: 0.9;">
+                        PILARES <span class="serif-italic">estratégicos</span>
+                    </h2>
+                </div>
+                
+                <div style="overflow-y: auto; flex-grow: 1; padding-right: 5px;">
+                    <div class="pillar-card">
+                        <span class="pillar-title">I. <span class="serif-italic">Implementación & Sistemas</span></span>
+                        <div class="pillar-item">
+                            <span class="item-label">SHOPIFY PRO</span>
+                            <p class="item-desc">Tiendas de <span class="highlight-serif">alta fidelidad</span> y conversión.</p>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="item-label">GENIUX (RIMPE)</span>
+                            <p class="item-desc">Autonomía y logística de delivery para bares y restaurantes. Ahorro de tiempo e <span style="color:var(--text-main); font-weight:700">incremento de ventas.</span></p>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="item-label">AUTOMATIZACIONES IA</span>
+                            <p class="item-desc">Ingeniería de flujos y procesos <span class="highlight-serif">autónomos</span> para optimizar tiempo.</p>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="item-label">SELLERCHAT</span>
+                            <p class="item-desc">Agente de ventas IA 24/7 optimizado para <span style="color:var(--text-main); font-weight:700">cierre masivo</span> en e-commerce.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card" style="border-left-color: var(--text-main);">
+                        <span class="pillar-title">II. <span class="serif-italic">Growth Traffic</span></span>
+                        <div class="pillar-item">
+                            <span class="item-label">GESTIÓN ADS</span>
+                            <p class="item-desc">Pauta <span style="color:var(--red); font-weight:800">agresiva</span> en Meta, TikTok y Google.</p>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="item-label">VIDEO MARKETING</span>
+                            <p class="item-desc">Contenido orgánico bajo una <span class="highlight-serif">"Estructura Viral Seller"</span>.</p>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="item-label">SEO & GEO</span>
+                            <p class="item-desc">Posicionamiento y dominio de búsquedas en <span style="color:var(--text-main); font-weight:700">Google</span> y búsquedas en <span style="color:var(--red); font-weight:800">IAs.</span></p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-card">
+                        <span class="pillar-title">III. <span class="serif-italic">Retención & Escalamiento</span></span>
+                        <div class="pillar-item">
+                            <span class="item-label">EMAIL MARKETING</span>
+                            <p class="item-desc">Automatización de flujos para <span style="color:var(--red); font-weight:800">ventas recurrentes.</span></p>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="item-label">LANDING PAGES & VSL</span>
+                            <p class="item-desc">Embudos de alto impacto optimizados para <span class="highlight-serif">escala real.</span></p>
+                        </div>
+                        <div class="pillar-item">
+                            <span class="item-label">FIDELIZACIÓN</span>
+                            <p class="item-desc">Estrategias de lealtad para elevar el <span style="color:var(--text-main); font-weight:700">valor del cliente (LTV).</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- SECCIÓN 3: PLANES -->
+        <section>
+            <div class="glass-container">
+                <div>
+                    <span class="label-auth">Ingeniería de Inversión</span>
+                    <h2 style="margin-top: 0.5rem; font-family: var(--font-sans); text-transform: uppercase;">
+                        MODELOS DE <span class="serif-italic">inversión</span>
+                    </h2>
+                </div>
+                
+                <div class="price-tabs">
+                    <button class="price-tab" onclick="switchPlan('entry')">ENTRY GROWTH</button>
+                    <button class="price-tab active metal-effect" onclick="switchPlan('elite')">ELITE DOMINATION</button>
+                </div>
+
+                <div id="plan-elite" class="plan-display active">
+                    <div class="price-hero-box elite-box">
+                        <span class="price-sub">Inversión Inicial</span>
+                        <span class="price-val elite-val animated-price">$1,297 <small style="font-size: 14px;">SETUP</small></span>
+                        <div style="height: 1px; background: rgba(255,0,0,0.1); margin: 10px 0;"></div>
+                        <span class="price-sub">Mensualidad de Escala</span>
+                        <span class="price-val" style="font-size: 2rem;">$997 <small style="font-size: 14px;">+ 9% VENTAS</small></span>
+                    </div>
+                    <div style="overflow-y: auto; flex-grow: 1; margin-top: 10px;">
+                        <div class="price-feature-item"><span>Gestión de Ads</span><span>Escalamiento Agresivo</span></div>
+                        <div class="price-feature-item"><span>Landing Pages & Embudos</span><span>Optimización Masiva & VSL</span></div>
+                        <div class="price-feature-item"><span>Video Marketing</span><span>20 Videos (Estructura de Ventas)</span></div>
+                        <div class="price-feature-item"><span>Automatización IA</span><span>Flujos Autónomos Completos</span></div>
+                        <div class="price-feature-item"><span>Email & Retención</span><span>Estrategia 360 Automatizada</span></div>
+                    </div>
+                </div>
+
+                <div id="plan-entry" class="plan-display">
+                    <div class="price-hero-box">
+                        <span class="price-sub">Inversión Inicial</span>
+                        <span class="price-val">$697 <small style="font-size: 14px;">SETUP</small></span>
+                        <div style="height: 1px; background: rgba(0,0,0,0.05); margin: 10px 0;"></div>
+                        <span class="price-sub">Mensualidad Estándar</span>
+                        <span class="price-val" style="font-size: 2rem;">$397 <small style="font-size: 14px;">+ 7% VENTAS</small></span>
+                    </div>
+                    <div style="overflow-y: auto; flex-grow: 1; margin-top: 10px;">
+                        <div class="price-feature-item"><span>Gestión de Ads</span><span>Estándar</span></div>
+                        <div class="price-feature-item"><span>Landing Pages & Embudos</span><span>No incluye</span></div>
+                        <div class="price-feature-item"><span>Video Marketing</span><span>Básico (10 Videos)</span></div>
+                        <div class="price-feature-item"><span>Automatización IA</span><span>Básica</span></div>
+                        <div class="price-feature-item"><span>Email & Retención</span><span>No incluye</span></div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 15px;">
+                    <p style="font-family: var(--font-mono); font-size: 9px; opacity: 0.6; text-transform: uppercase;">* Todos los planes requieren validación previa del modelo de negocio.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: OPCIÓN LÓGICA -->
+        <section>
+            <div class="glass-container section-glow inverse-theme" style="text-align: center; justify-content: space-around;">
+                <div style="width: 100%;">
+                    <h2 style="font-family: var(--font-sans); text-transform: uppercase; line-height: 0.9;">
+                        <span class="no-compitas">LA ÚNICA OPCIÓN</span> <span class="serif-italic">lógica.</span>
+                    </h2>
+                </div>
+
+                <div style="max-width: 800px; margin: 0 auto; padding: 1.5rem;">
+                    <span class="item-label" style="font-size: 14px; margin-bottom: 1rem;">¿Por qué el 90% elige Elite Domination?</span>
+                    <p style="font-size: clamp(1rem, 2.5vw, 1.2rem); line-height: 1.5; font-weight: 500; color: var(--text-secondary);">
+                        Es la única opción lógica para escalar. Al activar la <span class="highlight-serif">"Estructura de Ventas"</span> en video junto a embudos optimizados, el sistema protege tu rentabilidad mientras forzamos al algoritmo a traerte clientes sin descanso.
+                    </p>
+                </div>
+
+                <div style="background: rgba(128,128,128,0.05); border: 1px dashed var(--red); border-radius: 20px; padding: 2.5rem; width: 100%;">
+                    <p style="font-family: var(--font-serif); font-style: italic; font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-main);">
+                        ¿Buscas un servicio específico o una solución a medida?
+                    </p>
+                    <!-- CTA 2: SERVICIO PERSONALIZADO -->
+                    <a href="https://wa.me/593996337830?text=Hola!%20Me%20interesa%20una%20consultor%C3%ADa%20personalizada%20de%20DEALERUX%20para%20mi%20negocio/E-commerce.%20Deseo%20cotizar%20servicios." class="btn-pill btn-pulse" style="width: 100%; max-width: 450px; text-decoration: none;">
+                        COTIZAR SERVICIO PERSONALIZADO
+                    </a>
+                    <p style="font-family: var(--font-mono); font-size: 10px; margin-top: 1.8rem; opacity: 0.8; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">
+                        Analizamos tu realidad y adaptamos nuestra ingeniería a las necesidades exactas de tu negocio.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: ECOSISTEMA -->
+        <section>
+            <div class="glass-container">
+                <div style="text-align: center;">
+                    <span class="label-auth">Software & Automatización</span>
+                    <h2 style="margin-bottom: 2rem; font-family: var(--font-sans); text-transform: uppercase;">
+                        ECOSISTEMA <span class="serif-italic">Dealerux</span>
+                    </h2>
+                </div>
+                
+                <div class="software-grid" style="overflow-y: auto; align-self: center;">
+                    <div class="software-box">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3 class="software-title">GENIUX</h3>
+                            <span class="item-label">LOGÍSTICA</span>
+                        </div>
+                        <div class="software-img-container">
+                            <img src="https://raw.githubusercontent.com/dealerux/Dealerux/main/LOGO%20UX.png" alt="Geniux Logo">
+                        </div>
+                        <p class="software-desc">
+                            Autonomía y logística de delivery, <b>fidelización de clientes</b>, ahorro de tiempo e incremento de ventas para bares y restaurantes <b>("RIMPE")</b>.
+                        </p>
+                        <!-- LINK GENIUX -->
+                        <a href="https://github.com/dealerux/Dealerux/blob/main/LOGO%20UX.png" target="_blank" class="btn-software">COTIZAR GENIUX</a>
+                    </div>
+
+                    <div class="software-box" style="border-color: var(--red);">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3 class="software-title" style="color: var(--text-main);">SELLERCHAT</h3>
+                            <span class="item-label">VIRTUAL SELLER</span>
+                        </div>
+                        <div class="software-img-container">
+                            <img src="https://raw.githubusercontent.com/dealerux/Dealerux/main/SELLERCHAT.png" alt="Sellerchat Logo">
+                        </div>
+                        <p class="software-desc">
+                            Agente de IA 24/7 optimizado para ventas. Sistema adaptativo sin barreras para facturar en <b>E-commerce, Dropshipping (Dropi)</b>, productos digitales y negocios físicos.
+                        </p>
+                        <!-- CTA 3: SELLERCHAT -->
+                        <a href="https://wa.me/593996337830?text=Hola!%20Me%20interesa%20implementar%20SELLERCHAT.%20%C2%BFPodr%C3%ADan%20darme%20m%C3%A1s%20detalles%20sobre%20este%20software%20tecnol%C3%B3gico?" class="btn-software" style="background: var(--red); border-color: var(--red);">COTIZAR SELLERCHAT</a>
+                    </div>
+                </div>
+                
+                <div style="height: 5vh;"></div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: FOOTER -->
+        <section>
+            <div class="glass-container" style="text-align: center; justify-content: center;">
+                <img src="https://raw.githubusercontent.com/dealerux/Dealerux/main/LOGO.png" alt="Dealerux Logo" style="height: 60px; margin: 0 auto 1.5rem; filter: var(--logo-filter);">
+                <div class="footer-h1">
+                    <span class="no-compitas">NO COMPITAS,</span>
+                    <span class="serif-italic">evoluciona.</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // --- LÓGICA INTRO EVOLUCIÓN (AL INICIO) ---
+        window.addEventListener('load', function() {
+            const introProgress = document.getElementById('intro-progress');
+            const introOverlay = document.getElementById('intro-overlay');
+            const viewport = document.getElementById('viewport');
+
+            setTimeout(() => {
+                introProgress.style.width = '100%';
+            }, 100);
+
+            setTimeout(() => {
+                introOverlay.style.opacity = '0';
+                introOverlay.style.visibility = 'hidden';
+                viewport.classList.add('show-content');
+                
+                if (typeof updateUI === "function") {
+                    updateUI();
+                }
+            }, 3000); 
+        });
+
+        // --- LÓGICA ORIGINAL DE NAVEGACIÓN Y UI ---
+        const viewport = document.getElementById('viewport');
+        const pBar = document.getElementById('pBar');
+        const sections = document.querySelectorAll('section');
+        let currentSection = 0;
+        let isMoving = false;
+        let touchStartY = 0;
+        let touchStartX = 0;
+
+        function updateUI() {
+            sections.forEach((sec, i) => i === currentSection ? sec.classList.add('active') : sec.classList.remove('active'));
+            if (pBar) {
+                pBar.style.width = `${((currentSection + 1) / 6) * 100}%`;
+            }
+        }
+
+        function scrollToSection(idx) {
+            if (idx < 0 || idx >= 6 || isMoving) return;
+            currentSection = idx;
+            viewport.style.transform = `translateX(-${currentSection * 100}vw)`;
+            isMoving = true;
+            setTimeout(() => { 
+                updateUI(); 
+                isMoving = false; 
+            }, 800);
+        }
+
+        function switchPlan(pId) {
+            document.querySelectorAll('.plan-display').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.price-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('plan-' + pId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        window.addEventListener('wheel', (e) => {
+            const sensitivity = (currentSection === 0 || currentSection === 1 || currentSection === 3) ? 80 : 40;
+            if (Math.abs(e.deltaY) > sensitivity && !isMoving) {
+                e.deltaY > 0 ? scrollToSection(currentSection + 1) : scrollToSection(currentSection - 1);
+            }
+        }, { passive: true });
+
+        window.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        window.addEventListener('touchend', (e) => {
+            const deltaY = touchStartY - e.changedTouches[0].clientY;
+            const deltaX = touchStartX - e.changedTouches[0].clientX;
+            const dynamicThreshold = (currentSection === 0 || currentSection === 1 || currentSection === 3) ? 140 : 60;
+
+            if (Math.abs(deltaY) > dynamicThreshold && Math.abs(deltaY) > Math.abs(deltaX) * 1.5 && !isMoving) {
+                deltaY > 0 ? scrollToSection(currentSection + 1) : scrollToSection(currentSection - 1);
+            }
+        });
+
+        function toggleTheme() {
+            const body = document.body;
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        }
+
+        updateUI();
+    </script>
+</body>
+</html>
